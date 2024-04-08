@@ -3,11 +3,17 @@ class Node:
         self.next = next
 
 def swap_pairs(head):
-    # Your code goes here.
-    # Remember to return the head of the list.
+    if head is None or head.next is None:
+        return head
+    new_head = head.next
     current = head
-    while current is not None:
-        if current.next is not None:
-            current, current.next = current.next, current
-        current = current.next
-    return head
+    previous = None
+    while current is not None and current.next is not None:
+        if previous is not None:
+            previous.next = current.next
+        temp = current.next.next
+        current.next.next = current
+        current.next = temp
+        previous = current
+        current = temp
+    return new_head
