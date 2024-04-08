@@ -7,9 +7,9 @@ def linked_list_from_string(s):
     if not s:
         return
     s = s.split(' -> ')
-    head = Node(s[0])
+    head = Node(int(s[0])) if s[0] != 'None' else None
     current = head
     for i in range(1, len(s)):
-        current.next = Node(s[i])
+        current.next = Node(int(s[i])) if i != len(s) - 1 else None
         current = current.next
     return head
