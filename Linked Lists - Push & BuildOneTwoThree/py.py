@@ -10,9 +10,11 @@ class Node:
 '''
     
 def push(head, data):
-    # Your code goes here.
-    return Node(None)
+    nod = Node(data)
+    if not head:
+        return nod
+    nod.next = head
+    return nod
 
 def build_one_two_three():
-    # Your code goes here.
-    return Node(None)
+    return push(push(push(None, 3), 2), 1)
