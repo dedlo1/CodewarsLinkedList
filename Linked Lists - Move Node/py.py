@@ -15,4 +15,4 @@ def move_node(source, dest):
     source = source.next
     node.next = dest
     # Remember to return the context.
-    return Context(source, dest)
+    return Context(source, node)
